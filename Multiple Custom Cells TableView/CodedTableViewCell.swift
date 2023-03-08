@@ -7,12 +7,10 @@
 
 import UIKit
 import SnapKit
-
+//String(describing: CodedTableViewCell.self)
 class CodedTableViewCell: UITableViewCell {
     
     static let identifier = "CodedTableViewCell"
-    
-    
     
     private let myLabel: UILabel = {
         let label = UILabel()
@@ -29,11 +27,45 @@ class CodedTableViewCell: UITableViewCell {
         return imageView
     }()
     
-    public func configure() {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        setupUI()
+    }
+    
+    private func setupUI() {
         contentView.addSubview(myLabel)
         contentView.addSubview(myImageView)
         contentView.addSubview(myTitle)
         
+        myImageView.layer.masksToBounds = true
+        myImageView.layer.cornerRadius = 50.0
+        
+        myImageView.snp.makeConstraints { make in
+            make.height.width.equalTo(140)
+            //make.centerY.equalToSuperview()
+            make.top.equalToSuperview().offset(15)
+            make.leading.equalToSuperview().offset(5)
+        }
+        
+        myLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(15)
+            make.leading.equalTo(myImageView.snp.trailing).offset(40)
+        }
+        
+        myTitle.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().offset(-10)
+            make.trailing.equalToSuperview().offset(-10)
+            make.leading.equalTo(myImageView.snp.trailing).offset(10)
+            make.top.equalTo(myImageView.snp.bottom)
+        }
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    public func configure() {
         myLabel.text = "Ahaa Calisiyor"
         myLabel.textAlignment = .center
         myLabel.textColor = .red
@@ -45,34 +77,6 @@ class CodedTableViewCell: UITableViewCell {
         
         myImageView.image = UIImage(named: "image2")
         myImageView.contentMode = .scaleAspectFill
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-//        myImageView.frame = CGRect(x: 5, y:5, width: 140, height: 150)
-//        myLabel.frame = CGRect(x: 105, y: 5, width: contentView.frame.size.width-105, height: 100)
-//
-        myImageView.layer.masksToBounds = true
-        myImageView.layer.cornerRadius = 50.0
-        
-        myImageView.snp.makeConstraints { make in
-            make.width.equalTo(140)
-            make.height.equalTo(140)
-            make.centerY.equalTo(contentView)
-            make.leading.equalTo(contentView.snp.leading).offset(5)
-        }
-        
-        myLabel.snp.makeConstraints { make in
-            make.top.equalTo(contentView.snp.top).offset(15)
-            make.leading.equalTo(myImageView.snp.trailing).offset(40)
-        }
-        
-        myTitle.snp.makeConstraints { make in
-            make.bottom.equalTo(contentView.snp.bottom).offset(-10)
-            make.trailing.equalTo(contentView.snp.trailing).offset(-10)
-            make.leading.equalTo(myImageView.snp.trailing).offset(10)
-            
-        }
     }
     
 
