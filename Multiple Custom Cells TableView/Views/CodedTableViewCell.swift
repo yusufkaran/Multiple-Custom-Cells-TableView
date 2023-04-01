@@ -12,6 +12,20 @@ class CodedTableViewCell: UITableViewCell {
     
     static let identifier = "CodedTableViewCell"
     
+    enum labelColor {
+      case boldColor
+      case lightColor
+      
+      var uiColorCode: UIColor {
+            switch self {
+            case .boldColor:
+                return UIColor(red: 0.078, green: 0.086, blue: 0.098, alpha: 1)
+            case .lightColor:
+                return UIColor(red: 0.408, green: 0.463, blue: 0.518, alpha: 1)
+            }
+        }
+    }
+    
     private let myName: UILabel = {
         let nameLabel = UILabel()
         return nameLabel
@@ -73,13 +87,13 @@ class CodedTableViewCell: UITableViewCell {
     }()
     
     private let myQuoteNumber: UILabel = {
-        let QuoteNumber = UILabel()
-        return QuoteNumber
+        let quoteNumber = UILabel()
+        return quoteNumber
     }()
     
     private let myQuoteText: UILabel = {
-        let QuoteText = UILabel()
-        return QuoteText
+        let quoteText = UILabel()
+        return quoteText
     }()
     
     private let myLikeNumber: UILabel = {
@@ -161,7 +175,11 @@ class CodedTableViewCell: UITableViewCell {
         contentView.addSubview(myLikeIcon)
         contentView.addSubview(myShareIcon)
         contentView.addSubview(myBookmarkIcon)
-        
+        constraints()
+    }
+    
+    
+    public func constraints(){
         myProfilePic.layer.masksToBounds = true
         myProfilePic.layer.cornerRadius = 25.0
         
@@ -279,10 +297,6 @@ class CodedTableViewCell: UITableViewCell {
             make.leading.equalTo(myBookmarkIcon.snp.trailing).offset(54)
             make.top.equalTo(mySeparator2.snp.bottom).offset(13)
         }
-        
-        
-        
-        
     }
     
     required init?(coder: NSCoder) {
@@ -290,83 +304,76 @@ class CodedTableViewCell: UITableViewCell {
     }
     
     public func configure() {
-        
         // ProfilePicture
-        myProfilePic.image = UIImage(named: "image2")
+        myProfilePic.image = UIImage(named: "yusuf")
         myProfilePic.contentMode = .scaleAspectFill
         
         // Name & Surname
         myName.text = "Yusuf Karan"
         myName.textAlignment = .center
-        myName.textColor = UIColor(red: 0.078, green: 0.086, blue: 0.098, alpha: 1)
+        myName.textColor = labelColor.boldColor.uiColorCode
         myName.font = .systemFont(ofSize: 16, weight: .bold)
         
         
         // Nickname
         myNickname.text = "@yusufkaranx"
         myNickname.textAlignment = .center
-        myNickname.textColor = UIColor(red: 0.408, green: 0.463, blue: 0.518, alpha: 1)
+        myNickname.textColor = labelColor.lightColor.uiColorCode
         myNickname.font = .systemFont(ofSize: 16, weight: .medium)
          
         // Tweet Text
         myTweetText.text = "14 Mayis'ta secimleri kazanacagiz. Erdogan hukumeti bitecek. Topluma refah gelecek. Herkes 14 Mayis'ta sandiklara gitmeli, oy kullanmali. Bir oy bir oydur."
         myTweetText.textAlignment = .left
         myTweetText.font = .systemFont(ofSize: 18, weight: .light)
-        myTweetText.textColor = UIColor(red: 0.078, green: 0.086, blue: 0.098, alpha: 1)
+        myTweetText.textColor = labelColor.boldColor.uiColorCode
         myTweetText.numberOfLines = 0
         
         // Date Text
         myDate.text = "09:05 · 14.05.2023 ·"
         myDate.textAlignment = .left
         myDate.font = .systemFont(ofSize: 16, weight: .light)
-        myDate.textColor = UIColor(red: 0.408, green: 0.463, blue: 0.518, alpha: 1)
+        myDate.textColor = labelColor.lightColor.uiColorCode
 
         // View Number
         myViewNumber.text = "24,7K"
-        myViewNumber.textColor = UIColor(red: 0.078, green: 0.086, blue: 0.098, alpha: 1)
+        myViewNumber.textColor = labelColor.boldColor.uiColorCode
         myViewNumber.font = .systemFont(ofSize: 16, weight: .bold)
         
         // View Text
         myViewText.text = "Views"
         myViewText.textAlignment = .left
         myViewText.font = .systemFont(ofSize: 16, weight: .light)
-        myViewText.textColor = UIColor(red: 0.408, green: 0.463, blue: 0.518, alpha: 1)
+        myViewText.textColor = labelColor.lightColor.uiColorCode
         
         // Retweet Text
         myRetweetNumber.text = "89"
-        myRetweetNumber.font = UIFont(name: "SFProText-Semibold", size: 16)
-        myRetweetNumber.textColor = UIColor(red: 0.078, green: 0.086, blue: 0.098, alpha: 1)
+        myRetweetNumber.textColor = labelColor.boldColor.uiColorCode
         myRetweetNumber.font = .systemFont(ofSize: 16, weight: .bold)
  
         // Retweet Label
         myRetweetText.text = "Retweets"
-        myRetweetText.font = UIFont(name: "SFProT", size: 16)
         myRetweetText.font = .systemFont(ofSize: 16, weight: .light)
-        myRetweetText.textColor = UIColor(red: 0.408, green: 0.463, blue: 0.518, alpha: 1)
+        myRetweetText.textColor = labelColor.lightColor.uiColorCode
         
         // Quote Number
         myQuoteNumber.text = "1"
-        myQuoteNumber.font = UIFont(name: "SFProText-Semibold", size: 16)
-        myQuoteNumber.textColor = UIColor(red: 0.078, green: 0.086, blue: 0.098, alpha: 1)
+        myQuoteNumber.textColor = labelColor.boldColor.uiColorCode
         myQuoteNumber.font = .systemFont(ofSize: 16, weight: .bold)
  
         // Quote Label
         myQuoteText.text = "Quote"
-        myQuoteText.font = UIFont(name: "SFProT", size: 16)
         myQuoteText.font = .systemFont(ofSize: 16, weight: .light)
-        myQuoteText.textColor = UIColor(red: 0.408, green: 0.463, blue: 0.518, alpha: 1)
+        myQuoteText.textColor = labelColor.lightColor.uiColorCode
         
         // Like Number
         myLikeNumber.text = "933"
-        myLikeNumber.font = UIFont(name: "SFProText-Semibold", size: 16)
-        myLikeNumber.textColor = UIColor(red: 0.078, green: 0.086, blue: 0.098, alpha: 1)
+        myLikeNumber.textColor = labelColor.boldColor.uiColorCode
         myLikeNumber.font = .systemFont(ofSize: 16, weight: .bold)
  
         // Like Text
         myLikeText.text = "Likes"
-        myLikeText.font = UIFont(name: "SFProT", size: 16)
         myLikeText.font = .systemFont(ofSize: 16, weight: .light)
-        myLikeText.textColor = UIColor(red: 0.408, green: 0.463, blue: 0.518, alpha: 1)
+        myLikeText.textColor = labelColor.lightColor.uiColorCode
         
         // Comment Icon
         myCommentIcon.image = UIImage(named: "comment")
@@ -388,6 +395,4 @@ class CodedTableViewCell: UITableViewCell {
         myShareIcon.image = UIImage(named: "share")
         myShareIcon.contentMode = .scaleAspectFill
     }
-    
-
 }

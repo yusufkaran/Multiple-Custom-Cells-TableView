@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B52684CE29D790400055B5C9 /* DetailScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52684CD29D790400055B5C9 /* DetailScreenViewController.swift */; };
 		B55CC3D929B4DAC40032E75B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55CC3D829B4DAC40032E75B /* AppDelegate.swift */; };
 		B55CC3DB29B4DAC40032E75B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55CC3DA29B4DAC40032E75B /* SceneDelegate.swift */; };
 		B55CC3DD29B4DAC40032E75B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55CC3DC29B4DAC40032E75B /* ViewController.swift */; };
@@ -14,13 +15,12 @@
 		B55CC3E229B4DAC50032E75B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B55CC3E129B4DAC50032E75B /* Assets.xcassets */; };
 		B55CC3E529B4DAC50032E75B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55CC3E329B4DAC50032E75B /* LaunchScreen.storyboard */; };
 		B58CB9A829B4EE3D00A11DB3 /* SimpleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CB9A729B4EE3D00A11DB3 /* SimpleTableViewCell.swift */; };
-		B58CB9AB29B4F1CD00A11DB3 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CB9A929B4F1CD00A11DB3 /* ImageTableViewCell.swift */; };
-		B58CB9AC29B4F1CD00A11DB3 /* ImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B58CB9AA29B4F1CD00A11DB3 /* ImageTableViewCell.xib */; };
 		B58CB9AE29B52D7C00A11DB3 /* CodedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CB9AD29B52D7C00A11DB3 /* CodedTableViewCell.swift */; };
 		B58CB9B129B603DC00A11DB3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B58CB9B029B603DC00A11DB3 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B52684CD29D790400055B5C9 /* DetailScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenViewController.swift; sourceTree = "<group>"; };
 		B55CC3D529B4DAC40032E75B /* Multiple Custom Cells TableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Multiple Custom Cells TableView.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B55CC3D829B4DAC40032E75B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B55CC3DA29B4DAC40032E75B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,8 +30,6 @@
 		B55CC3E429B4DAC50032E75B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B55CC3E629B4DAC50032E75B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B58CB9A729B4EE3D00A11DB3 /* SimpleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewCell.swift; sourceTree = "<group>"; };
-		B58CB9A929B4F1CD00A11DB3 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
-		B58CB9AA29B4F1CD00A11DB3 /* ImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageTableViewCell.xib; sourceTree = "<group>"; };
 		B58CB9AD29B52D7C00A11DB3 /* CodedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodedTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,19 +64,34 @@
 		B55CC3D729B4DAC40032E75B /* Multiple Custom Cells TableView */ = {
 			isa = PBXGroup;
 			children = (
+				B5A8A35B29D8E545007EA2E7 /* Views */,
+				B5A8A35A29D8E4DE007EA2E7 /* Controllers */,
 				B55CC3D829B4DAC40032E75B /* AppDelegate.swift */,
 				B55CC3DA29B4DAC40032E75B /* SceneDelegate.swift */,
-				B55CC3DC29B4DAC40032E75B /* ViewController.swift */,
 				B55CC3DE29B4DAC40032E75B /* Main.storyboard */,
 				B55CC3E129B4DAC50032E75B /* Assets.xcassets */,
 				B55CC3E329B4DAC50032E75B /* LaunchScreen.storyboard */,
 				B55CC3E629B4DAC50032E75B /* Info.plist */,
-				B58CB9A729B4EE3D00A11DB3 /* SimpleTableViewCell.swift */,
-				B58CB9A929B4F1CD00A11DB3 /* ImageTableViewCell.swift */,
-				B58CB9AA29B4F1CD00A11DB3 /* ImageTableViewCell.xib */,
-				B58CB9AD29B52D7C00A11DB3 /* CodedTableViewCell.swift */,
 			);
 			path = "Multiple Custom Cells TableView";
+			sourceTree = "<group>";
+		};
+		B5A8A35A29D8E4DE007EA2E7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B52684CD29D790400055B5C9 /* DetailScreenViewController.swift */,
+				B55CC3DC29B4DAC40032E75B /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B5A8A35B29D8E545007EA2E7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B58CB9A729B4EE3D00A11DB3 /* SimpleTableViewCell.swift */,
+				B58CB9AD29B52D7C00A11DB3 /* CodedTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,7 +159,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B55CC3E529B4DAC50032E75B /* LaunchScreen.storyboard in Resources */,
-				B58CB9AC29B4F1CD00A11DB3 /* ImageTableViewCell.xib in Resources */,
 				B55CC3E229B4DAC50032E75B /* Assets.xcassets in Resources */,
 				B55CC3E029B4DAC40032E75B /* Main.storyboard in Resources */,
 			);
@@ -159,10 +171,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B52684CE29D790400055B5C9 /* DetailScreenViewController.swift in Sources */,
 				B55CC3DD29B4DAC40032E75B /* ViewController.swift in Sources */,
 				B58CB9AE29B52D7C00A11DB3 /* CodedTableViewCell.swift in Sources */,
 				B58CB9A829B4EE3D00A11DB3 /* SimpleTableViewCell.swift in Sources */,
-				B58CB9AB29B4F1CD00A11DB3 /* ImageTableViewCell.swift in Sources */,
 				B55CC3D929B4DAC40032E75B /* AppDelegate.swift in Sources */,
 				B55CC3DB29B4DAC40032E75B /* SceneDelegate.swift in Sources */,
 			);
