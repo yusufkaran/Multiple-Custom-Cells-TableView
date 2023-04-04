@@ -26,42 +26,89 @@ class CodedTableViewCell: UITableViewCell {
         }
     }
     
-    private let myName: UILabel = {
+    enum fontTemp {
+        case sBold
+        case sMedium
+        case sLight
+        case bLight
+        
+        var uiFontCode: UIFont {
+            switch self {
+                
+            case .sBold:
+                return .systemFont(ofSize: 16, weight: .bold)
+            case .sMedium:
+                return .systemFont(ofSize: 16, weight: .medium)
+            case .sLight:
+                return .systemFont(ofSize: 16, weight: .light)
+            case .bLight:
+                return .systemFont(ofSize: 18, weight: .light)
+            }
+        }
+    }
+    
+    private let nameLabel: UILabel = {
         let nameLabel = UILabel()
+        nameLabel.text = "Yusuf Karan"
+        nameLabel.textAlignment = .center
+        nameLabel.textColor = labelColor.boldColor.uiColorCode
+        nameLabel.font = fontTemp.sBold.uiFontCode
         return nameLabel
     }()
     
-    private let myNickname: UILabel = {
+    private let nickLabel: UILabel = {
         let nickLabel = UILabel()
+        nickLabel.text = "@yusufkaranx"
+        nickLabel.textAlignment = .center
+        nickLabel.textColor = labelColor.lightColor.uiColorCode
+        nickLabel.font = fontTemp.sMedium.uiFontCode
         return nickLabel
     }()
     
-    private let myDate: UILabel = {
+    private let dateLabel: UILabel = {
         let dateLabel = UILabel()
+        dateLabel.text = "09:05 · 14.05.2023 ·"
+        dateLabel.textAlignment = .left
+        dateLabel.font = fontTemp.sLight.uiFontCode
+        dateLabel.textColor = labelColor.lightColor.uiColorCode
         return dateLabel
     }()
     
-    private let myTweetText: UILabel = {
+    private let tweetLabel: UILabel = {
         let tweetLabel = UILabel()
+        tweetLabel.text = "14 Mayis'ta secimleri kazanacagiz. Erdogan hukumeti bitecek. Topluma refah gelecek. Herkes 14 Mayis'ta sandiklara gitmeli, oy kullanmali. Bir oy bir oydur."
+        tweetLabel.textAlignment = .left
+        tweetLabel.font = fontTemp.bLight.uiFontCode
+        tweetLabel.textColor = labelColor.boldColor.uiColorCode
+        tweetLabel.numberOfLines = 0
         return tweetLabel
     }()
     
-    private let myProfilePic: UIImageView = {
+    private let profilePic: UIImageView = {
         let profilePic = UIImageView()
+        profilePic.image = UIImage(named: "yusuf")
+        profilePic.contentMode = .scaleAspectFill
         return profilePic
     }()
         
-    private let myViewNumber: UILabel = {
+    private let viewNumberLabel: UILabel = {
         let viewNumberLabel = UILabel()
+        viewNumberLabel.text = "24,7K"
+        viewNumberLabel.textColor = labelColor.boldColor.uiColorCode
+        viewNumberLabel.font = fontTemp.sBold.uiFontCode
         return viewNumberLabel
     }()
     
-    private let myViewText: UILabel = {
+    private let viewLabel: UILabel = {
         let viewLabel = UILabel()
+        viewLabel.text = "Views"
+        viewLabel.textAlignment = .left
+        viewLabel.font = .systemFont(ofSize: 16, weight: .light)
+        viewLabel.textColor = labelColor.lightColor.uiColorCode
         return viewLabel
     }()
         
-    private let mySeparator: UILabel = {
+    private let separatorLine: UILabel = {
         let separatorLine = UILabel()
         separatorLine.frame = CGRect(x: 0, y: 0, width: 386, height: 0)
         separatorLine.backgroundColor = .white
@@ -76,37 +123,55 @@ class CodedTableViewCell: UITableViewCell {
         return separatorLine
     }()
     
-    private let myRetweetNumber: UILabel = {
+    private let retweetNumber: UILabel = {
         let retweetNumber = UILabel()
+        retweetNumber.text = "89"
+        retweetNumber.textColor = labelColor.boldColor.uiColorCode
+        retweetNumber.font = fontTemp.sBold.uiFontCode
         return retweetNumber
     }()
     
-    private let myRetweetText: UILabel = {
+    private let retweetText: UILabel = {
         let retweetText = UILabel()
+        retweetText.text = "Retweets"
+        retweetText.font = fontTemp.sLight.uiFontCode
+        retweetText.textColor = labelColor.lightColor.uiColorCode
         return retweetText
     }()
     
-    private let myQuoteNumber: UILabel = {
+    private let quoteNumber: UILabel = {
         let quoteNumber = UILabel()
+        quoteNumber.text = "1"
+        quoteNumber.textColor = labelColor.boldColor.uiColorCode
+        quoteNumber.font = fontTemp.sBold.uiFontCode
         return quoteNumber
     }()
     
-    private let myQuoteText: UILabel = {
+    private let quoteText: UILabel = {
         let quoteText = UILabel()
+        quoteText.text = "Quote"
+        quoteText.font = fontTemp.sLight.uiFontCode
+        quoteText.textColor = labelColor.lightColor.uiColorCode
         return quoteText
     }()
     
-    private let myLikeNumber: UILabel = {
+    private let likeNumber: UILabel = {
         let likeNumber = UILabel()
+        likeNumber.text = "933"
+        likeNumber.textColor = labelColor.boldColor.uiColorCode
+        likeNumber.font = fontTemp.sBold.uiFontCode
         return likeNumber
     }()
     
-    private let myLikeText: UILabel = {
+    private let likeText: UILabel = {
         let likeText = UILabel()
+        likeText.text = "Likes"
+        likeText.font = fontTemp.sLight.uiFontCode
+        likeText.textColor = labelColor.lightColor.uiColorCode
         return likeText
     }()
     
-    private let mySeparator2: UILabel = {
+    private let separatorLinee: UILabel = {
         let separatorLine = UILabel()
         separatorLine.frame = CGRect(x: 0, y: 0, width: 386, height: 0)
         separatorLine.backgroundColor = .white
@@ -121,28 +186,38 @@ class CodedTableViewCell: UITableViewCell {
         return separatorLine
     }()
     
-    private let myCommentIcon: UIImageView = {
+    private let commentIcon: UIImageView = {
         let commentIcon = UIImageView()
+        commentIcon.image = UIImage(named: "comment")
+        commentIcon.contentMode = .scaleAspectFill
         return commentIcon
     }()
     
-    private let myRetweetIcon: UIImageView = {
+    private let retweetIcon: UIImageView = {
         let retweetIcon = UIImageView()
+        retweetIcon.image = UIImage(named: "retweet")
+        retweetIcon.contentMode = .scaleAspectFill
         return retweetIcon
     }()
     
-    private let myLikeIcon: UIImageView = {
+    private let likeIcon: UIImageView = {
         let likeIcon = UIImageView()
+        likeIcon.image = UIImage(named: "like")
+        likeIcon.contentMode = .scaleAspectFill
         return likeIcon
     }()
     
-    private let myBookmarkIcon: UIImageView = {
+    private let bookmarkIcon: UIImageView = {
         let bookmarkIcon = UIImageView()
+        bookmarkIcon.image = UIImage(named: "bookmark")
+        bookmarkIcon.contentMode = .scaleAspectFill
         return bookmarkIcon
     }()
     
-    private let myShareIcon: UIImageView = {
+    private let shareIcon: UIImageView = {
         let shareIcon = UIImageView()
+        shareIcon.image = UIImage(named: "share")
+        shareIcon.contentMode = .scaleAspectFill
         return shareIcon
     }()
     
@@ -154,245 +229,153 @@ class CodedTableViewCell: UITableViewCell {
         setupUI()
     }
     
-    private func setupUI() {
-        contentView.addSubview(myName)
-        contentView.addSubview(myProfilePic)
-        contentView.addSubview(myTweetText)
-        contentView.addSubview(myNickname)
-        contentView.addSubview(myDate)
-        contentView.addSubview(myViewNumber)
-        contentView.addSubview(myViewText)
-        contentView.addSubview(mySeparator)
-        contentView.addSubview(myRetweetNumber)
-        contentView.addSubview(myRetweetText)
-        contentView.addSubview(myQuoteText)
-        contentView.addSubview(myQuoteNumber)
-        contentView.addSubview(myLikeText)
-        contentView.addSubview(myLikeNumber)
-        contentView.addSubview(mySeparator2)
-        contentView.addSubview(myCommentIcon)
-        contentView.addSubview(myRetweetIcon)
-        contentView.addSubview(myLikeIcon)
-        contentView.addSubview(myShareIcon)
-        contentView.addSubview(myBookmarkIcon)
-        constraints()
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
-    
-    public func constraints(){
-        myProfilePic.layer.masksToBounds = true
-        myProfilePic.layer.cornerRadius = 25.0
+    private func setupUI() {
+        contentView.addSubview(nameLabel)
+        contentView.addSubview(profilePic)
+        contentView.addSubview(tweetLabel)
+        contentView.addSubview(nickLabel)
+        contentView.addSubview(dateLabel)
+        contentView.addSubview(viewNumberLabel)
+        contentView.addSubview(viewLabel)
+        contentView.addSubview(separatorLine)
+        contentView.addSubview(retweetNumber)
+        contentView.addSubview(retweetText)
+        contentView.addSubview(quoteNumber)
+        contentView.addSubview(quoteText)
+        contentView.addSubview(likeNumber)
+        contentView.addSubview(likeText)
+        contentView.addSubview(separatorLinee)
+        contentView.addSubview(commentIcon)
+        contentView.addSubview(retweetIcon)
+        contentView.addSubview(likeIcon)
+        contentView.addSubview(bookmarkIcon)
+        contentView.addSubview(shareIcon)
         
-        myProfilePic.snp.makeConstraints { make in
+        
+        
+        profilePic.layer.masksToBounds = true
+        profilePic.layer.cornerRadius = 25.0
+        
+        profilePic.snp.makeConstraints { make in
             make.height.width.equalTo(55)
             //make.centerY.equalToSuperview()
             make.top.equalToSuperview().offset(42)
             make.leading.equalToSuperview().offset(20)
         }
         
-        myName.snp.makeConstraints { make in
+        nameLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(49)
             make.leading.equalToSuperview().offset(83)
         }
         
-        myNickname.snp.makeConstraints { make in
+        nickLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(83)
             make.top.equalToSuperview().offset(68)
         }
         
-        myTweetText.snp.makeConstraints { make in
+        tweetLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
             make.top.equalToSuperview().offset(120)
         }
         
-        myDate.snp.makeConstraints { make in
+        dateLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
-            make.top.equalTo(myTweetText.snp.bottom).offset(37)
+            make.top.equalTo(tweetLabel.snp.bottom).offset(37)
             make.bottom.equalToSuperview().offset(-103)
         }
         
-        myViewNumber.snp.makeConstraints { make in
-            make.top.equalTo(myTweetText.snp.bottom).offset(37)
-            make.leading.equalTo(myDate.snp.trailing).offset(5)
+        viewNumberLabel.snp.makeConstraints { make in
+            make.top.equalTo(tweetLabel.snp.bottom).offset(37)
+            make.leading.equalTo(dateLabel.snp.trailing).offset(5)
         }
         
-        myViewText.snp.makeConstraints { make in
-            make.top.equalTo(myTweetText.snp.bottom).offset(37)
-            make.leading.equalTo(myViewNumber.snp.trailing).offset(4)
+        viewLabel.snp.makeConstraints { make in
+            make.top.equalTo(tweetLabel.snp.bottom).offset(37)
+            make.leading.equalTo(viewNumberLabel.snp.trailing).offset(4)
         }
         
         
-        mySeparator.snp.makeConstraints { make in
+        separatorLine.snp.makeConstraints { make in
             make.height.equalTo(0)
             make.leading.equalToSuperview().offset(14)
             make.trailing.equalToSuperview().offset(-14)
-            make.top.equalTo(myDate.snp.bottom).offset(15)
+            make.top.equalTo(dateLabel.snp.bottom).offset(15)
         }
         
-        myRetweetNumber.snp.makeConstraints { make in
+        retweetNumber.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
-            make.top.equalTo(myDate.snp.bottom).offset(28)
+            make.top.equalTo(dateLabel.snp.bottom).offset(28)
         }
         
-        myRetweetText.snp.makeConstraints { make in
-            make.leading.equalTo(myRetweetNumber.snp.trailing).offset(4)
-            make.top.equalTo(myDate.snp.bottom).offset(28)
+        retweetText.snp.makeConstraints { make in
+            make.leading.equalTo(retweetNumber.snp.trailing).offset(4)
+            make.top.equalTo(dateLabel.snp.bottom).offset(28)
         }
         
-        myQuoteNumber.snp.makeConstraints { make in
-            make.leading.equalTo(myRetweetText.snp.trailing).offset(8)
-            make.top.equalTo(myDate.snp.bottom).offset(28)
+        quoteNumber.snp.makeConstraints { make in
+            make.leading.equalTo(retweetText.snp.trailing).offset(8)
+            make.top.equalTo(dateLabel.snp.bottom).offset(28)
         }
         
-        myQuoteText.snp.makeConstraints { make in
-            make.leading.equalTo(myQuoteNumber.snp.trailing).offset(4)
-            make.top.equalTo(myDate.snp.bottom).offset(28)
+        quoteText.snp.makeConstraints { make in
+            make.leading.equalTo(quoteNumber.snp.trailing).offset(4)
+            make.top.equalTo(dateLabel.snp.bottom).offset(28)
         }
         
-        myLikeNumber.snp.makeConstraints { make in
-            make.leading.equalTo(myQuoteText.snp.trailing).offset(8)
-            make.top.equalTo(myDate.snp.bottom).offset(28)
+        likeNumber.snp.makeConstraints { make in
+            make.leading.equalTo(quoteText.snp.trailing).offset(8)
+            make.top.equalTo(dateLabel.snp.bottom).offset(28)
         }
         
-        myLikeText.snp.makeConstraints { make in
-            make.leading.equalTo(myLikeNumber.snp.trailing).offset(4)
-            make.top.equalTo(myDate.snp.bottom).offset(28)
+        likeText.snp.makeConstraints { make in
+            make.leading.equalTo(likeNumber.snp.trailing).offset(4)
+            make.top.equalTo(dateLabel.snp.bottom).offset(28)
         }
         
-        mySeparator2.snp.makeConstraints { make in
+        separatorLinee.snp.makeConstraints { make in
             make.height.equalTo(0)
             make.leading.equalToSuperview().offset(14)
             make.trailing.equalToSuperview().offset(-14)
-            make.top.equalTo(myLikeText.snp.bottom).offset(12)
+            make.top.equalTo(likeText.snp.bottom).offset(12)
         }
         
-        myCommentIcon.snp.makeConstraints { make in
+        commentIcon.snp.makeConstraints { make in
             make.height.width.equalTo(18)
             make.leading.equalToSuperview().offset(45)
-            make.top.equalTo(mySeparator2.snp.bottom).offset(13)
+            make.top.equalTo(separatorLinee.snp.bottom).offset(13)
         }
         
-        myRetweetIcon.snp.makeConstraints { make in
+        retweetIcon.snp.makeConstraints { make in
             make.height.equalTo(15)
             make.width.equalTo(22)
-            make.leading.equalTo(myCommentIcon.snp.trailing).offset(54)
-            make.top.equalTo(mySeparator2.snp.bottom).offset(13)
+            make.leading.equalTo(commentIcon.snp.trailing).offset(54)
+            make.top.equalTo(separatorLinee.snp.bottom).offset(13)
         }
         
-        myLikeIcon.snp.makeConstraints { make in
+        likeIcon.snp.makeConstraints { make in
             make.height.width.equalTo(18)
-            make.leading.equalTo(myRetweetIcon.snp.trailing).offset(54)
-            make.top.equalTo(mySeparator2.snp.bottom).offset(13)
+            make.leading.equalTo(retweetIcon.snp.trailing).offset(54)
+            make.top.equalTo(separatorLinee.snp.bottom).offset(13)
         }
         
-        myBookmarkIcon.snp.makeConstraints { make in
+        bookmarkIcon.snp.makeConstraints { make in
             make.height.width.equalTo(18)
-            make.leading.equalTo(myLikeIcon.snp.trailing).offset(54)
-            make.top.equalTo(mySeparator2.snp.bottom).offset(13)
+            make.leading.equalTo(likeIcon.snp.trailing).offset(54)
+            make.top.equalTo(separatorLinee.snp.bottom).offset(13)
         }
         
-        myShareIcon.snp.makeConstraints { make in
+        shareIcon.snp.makeConstraints { make in
             make.height.width.equalTo(18)
-            make.leading.equalTo(myBookmarkIcon.snp.trailing).offset(54)
-            make.top.equalTo(mySeparator2.snp.bottom).offset(13)
+            make.leading.equalTo(bookmarkIcon.snp.trailing).offset(54)
+            make.top.equalTo(separatorLinee.snp.bottom).offset(13)
         }
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
-    public func configure() {
-        // ProfilePicture
-        myProfilePic.image = UIImage(named: "yusuf")
-        myProfilePic.contentMode = .scaleAspectFill
-        
-        // Name & Surname
-        myName.text = "Yusuf Karan"
-        myName.textAlignment = .center
-        myName.textColor = labelColor.boldColor.uiColorCode
-        myName.font = .systemFont(ofSize: 16, weight: .bold)
-        
-        
-        // Nickname
-        myNickname.text = "@yusufkaranx"
-        myNickname.textAlignment = .center
-        myNickname.textColor = labelColor.lightColor.uiColorCode
-        myNickname.font = .systemFont(ofSize: 16, weight: .medium)
-         
-        // Tweet Text
-        myTweetText.text = "14 Mayis'ta secimleri kazanacagiz. Erdogan hukumeti bitecek. Topluma refah gelecek. Herkes 14 Mayis'ta sandiklara gitmeli, oy kullanmali. Bir oy bir oydur."
-        myTweetText.textAlignment = .left
-        myTweetText.font = .systemFont(ofSize: 18, weight: .light)
-        myTweetText.textColor = labelColor.boldColor.uiColorCode
-        myTweetText.numberOfLines = 0
-        
-        // Date Text
-        myDate.text = "09:05 · 14.05.2023 ·"
-        myDate.textAlignment = .left
-        myDate.font = .systemFont(ofSize: 16, weight: .light)
-        myDate.textColor = labelColor.lightColor.uiColorCode
-
-        // View Number
-        myViewNumber.text = "24,7K"
-        myViewNumber.textColor = labelColor.boldColor.uiColorCode
-        myViewNumber.font = .systemFont(ofSize: 16, weight: .bold)
-        
-        // View Text
-        myViewText.text = "Views"
-        myViewText.textAlignment = .left
-        myViewText.font = .systemFont(ofSize: 16, weight: .light)
-        myViewText.textColor = labelColor.lightColor.uiColorCode
-        
-        // Retweet Text
-        myRetweetNumber.text = "89"
-        myRetweetNumber.textColor = labelColor.boldColor.uiColorCode
-        myRetweetNumber.font = .systemFont(ofSize: 16, weight: .bold)
- 
-        // Retweet Label
-        myRetweetText.text = "Retweets"
-        myRetweetText.font = .systemFont(ofSize: 16, weight: .light)
-        myRetweetText.textColor = labelColor.lightColor.uiColorCode
-        
-        // Quote Number
-        myQuoteNumber.text = "1"
-        myQuoteNumber.textColor = labelColor.boldColor.uiColorCode
-        myQuoteNumber.font = .systemFont(ofSize: 16, weight: .bold)
- 
-        // Quote Label
-        myQuoteText.text = "Quote"
-        myQuoteText.font = .systemFont(ofSize: 16, weight: .light)
-        myQuoteText.textColor = labelColor.lightColor.uiColorCode
-        
-        // Like Number
-        myLikeNumber.text = "933"
-        myLikeNumber.textColor = labelColor.boldColor.uiColorCode
-        myLikeNumber.font = .systemFont(ofSize: 16, weight: .bold)
- 
-        // Like Text
-        myLikeText.text = "Likes"
-        myLikeText.font = .systemFont(ofSize: 16, weight: .light)
-        myLikeText.textColor = labelColor.lightColor.uiColorCode
-        
-        // Comment Icon
-        myCommentIcon.image = UIImage(named: "comment")
-        myCommentIcon.contentMode = .scaleAspectFill
-        
-        // Retweet Icon
-        myRetweetIcon.image = UIImage(named: "retweet")
-        myRetweetIcon.contentMode = .scaleAspectFill
-        
-        // Like Icon
-        myLikeIcon.image = UIImage(named: "like")
-        myLikeIcon.contentMode = .scaleAspectFill
-        
-        // Bookmark Icon
-        myBookmarkIcon.image = UIImage(named: "bookmark")
-        myBookmarkIcon.contentMode = .scaleAspectFill
-        
-        // Share Icon
-        myShareIcon.image = UIImage(named: "share")
-        myShareIcon.contentMode = .scaleAspectFill
-    }
+    
 }
