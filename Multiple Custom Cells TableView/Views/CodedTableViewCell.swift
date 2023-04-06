@@ -12,47 +12,12 @@ class CodedTableViewCell: UITableViewCell {
     
     static let identifier = "CodedTableViewCell"
     
-    enum labelColor {
-      case boldColor
-      case lightColor
-      
-      var uiColorCode: UIColor {
-            switch self {
-            case .boldColor:
-                return UIColor(red: 0.078, green: 0.086, blue: 0.098, alpha: 1)
-            case .lightColor:
-                return UIColor(red: 0.408, green: 0.463, blue: 0.518, alpha: 1)
-            }
-        }
-    }
-    
-    enum fontTemp {
-        case sBold
-        case sMedium
-        case sLight
-        case bLight
-        
-        var uiFontCode: UIFont {
-            switch self {
-                
-            case .sBold:
-                return .systemFont(ofSize: 16, weight: .bold)
-            case .sMedium:
-                return .systemFont(ofSize: 16, weight: .medium)
-            case .sLight:
-                return .systemFont(ofSize: 16, weight: .light)
-            case .bLight:
-                return .systemFont(ofSize: 18, weight: .light)
-            }
-        }
-    }
-    
     private let nameLabel: UILabel = {
         let nameLabel = UILabel()
         nameLabel.text = "Yusuf Karan"
         nameLabel.textAlignment = .center
-        nameLabel.textColor = labelColor.boldColor.uiColorCode
-        nameLabel.font = fontTemp.sBold.uiFontCode
+        nameLabel.textColor = LabelColor.boldColor.uiColorCode
+        nameLabel.font = FontTemp.sBold.uiFontCode
         return nameLabel
     }()
     
@@ -60,8 +25,8 @@ class CodedTableViewCell: UITableViewCell {
         let nickLabel = UILabel()
         nickLabel.text = "@yusufkaranx"
         nickLabel.textAlignment = .center
-        nickLabel.textColor = labelColor.lightColor.uiColorCode
-        nickLabel.font = fontTemp.sMedium.uiFontCode
+        nickLabel.textColor = LabelColor.lightColor.uiColorCode
+        nickLabel.font = FontTemp.sMedium.uiFontCode
         return nickLabel
     }()
     
@@ -69,8 +34,8 @@ class CodedTableViewCell: UITableViewCell {
         let dateLabel = UILabel()
         dateLabel.text = "09:05 · 14.05.2023 ·"
         dateLabel.textAlignment = .left
-        dateLabel.font = fontTemp.sLight.uiFontCode
-        dateLabel.textColor = labelColor.lightColor.uiColorCode
+        dateLabel.font = FontTemp.sLight.uiFontCode
+        dateLabel.textColor = LabelColor.lightColor.uiColorCode
         return dateLabel
     }()
     
@@ -78,8 +43,8 @@ class CodedTableViewCell: UITableViewCell {
         let tweetLabel = UILabel()
         tweetLabel.text = "14 Mayis'ta secimleri kazanacagiz. Erdogan hukumeti bitecek. Topluma refah gelecek. Herkes 14 Mayis'ta sandiklara gitmeli, oy kullanmali. Bir oy bir oydur."
         tweetLabel.textAlignment = .left
-        tweetLabel.font = fontTemp.bLight.uiFontCode
-        tweetLabel.textColor = labelColor.boldColor.uiColorCode
+        tweetLabel.font = FontTemp.bLight.uiFontCode
+        tweetLabel.textColor = LabelColor.boldColor.uiColorCode
         tweetLabel.numberOfLines = 0
         return tweetLabel
     }()
@@ -94,8 +59,8 @@ class CodedTableViewCell: UITableViewCell {
     private let viewNumberLabel: UILabel = {
         let viewNumberLabel = UILabel()
         viewNumberLabel.text = "24,7K"
-        viewNumberLabel.textColor = labelColor.boldColor.uiColorCode
-        viewNumberLabel.font = fontTemp.sBold.uiFontCode
+        viewNumberLabel.textColor = LabelColor.boldColor.uiColorCode
+        viewNumberLabel.font = FontTemp.sBold.uiFontCode
         return viewNumberLabel
     }()
     
@@ -104,7 +69,7 @@ class CodedTableViewCell: UITableViewCell {
         viewLabel.text = "Views"
         viewLabel.textAlignment = .left
         viewLabel.font = .systemFont(ofSize: 16, weight: .light)
-        viewLabel.textColor = labelColor.lightColor.uiColorCode
+        viewLabel.textColor = LabelColor.lightColor.uiColorCode
         return viewLabel
     }()
         
@@ -126,48 +91,48 @@ class CodedTableViewCell: UITableViewCell {
     private let retweetNumber: UILabel = {
         let retweetNumber = UILabel()
         retweetNumber.text = "89"
-        retweetNumber.textColor = labelColor.boldColor.uiColorCode
-        retweetNumber.font = fontTemp.sBold.uiFontCode
+        retweetNumber.textColor = LabelColor.boldColor.uiColorCode
+        retweetNumber.font = FontTemp.sBold.uiFontCode
         return retweetNumber
     }()
     
     private let retweetText: UILabel = {
         let retweetText = UILabel()
         retweetText.text = "Retweets"
-        retweetText.font = fontTemp.sLight.uiFontCode
-        retweetText.textColor = labelColor.lightColor.uiColorCode
+        retweetText.font = FontTemp.sLight.uiFontCode
+        retweetText.textColor = LabelColor.lightColor.uiColorCode
         return retweetText
     }()
     
     private let quoteNumber: UILabel = {
         let quoteNumber = UILabel()
         quoteNumber.text = "1"
-        quoteNumber.textColor = labelColor.boldColor.uiColorCode
-        quoteNumber.font = fontTemp.sBold.uiFontCode
+        quoteNumber.textColor = LabelColor.boldColor.uiColorCode
+        quoteNumber.font = FontTemp.sBold.uiFontCode
         return quoteNumber
     }()
     
     private let quoteText: UILabel = {
         let quoteText = UILabel()
         quoteText.text = "Quote"
-        quoteText.font = fontTemp.sLight.uiFontCode
-        quoteText.textColor = labelColor.lightColor.uiColorCode
+        quoteText.font = FontTemp.sLight.uiFontCode
+        quoteText.textColor = LabelColor.lightColor.uiColorCode
         return quoteText
     }()
     
     private let likeNumber: UILabel = {
         let likeNumber = UILabel()
         likeNumber.text = "933"
-        likeNumber.textColor = labelColor.boldColor.uiColorCode
-        likeNumber.font = fontTemp.sBold.uiFontCode
+        likeNumber.textColor = LabelColor.boldColor.uiColorCode
+        likeNumber.font = FontTemp.sBold.uiFontCode
         return likeNumber
     }()
     
     private let likeText: UILabel = {
         let likeText = UILabel()
         likeText.text = "Likes"
-        likeText.font = fontTemp.sLight.uiFontCode
-        likeText.textColor = labelColor.lightColor.uiColorCode
+        likeText.font = FontTemp.sLight.uiFontCode
+        likeText.textColor = LabelColor.lightColor.uiColorCode
         return likeText
     }()
     

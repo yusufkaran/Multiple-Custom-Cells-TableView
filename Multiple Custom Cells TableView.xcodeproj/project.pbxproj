@@ -14,6 +14,8 @@
 		B55CC3E029B4DAC40032E75B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55CC3DE29B4DAC40032E75B /* Main.storyboard */; };
 		B55CC3E229B4DAC50032E75B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B55CC3E129B4DAC50032E75B /* Assets.xcassets */; };
 		B55CC3E529B4DAC50032E75B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55CC3E329B4DAC50032E75B /* LaunchScreen.storyboard */; };
+		B56CED7629DF1D830069A326 /* LabelColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56CED7529DF1D830069A326 /* LabelColor.swift */; };
+		B56CED7829DF426D0069A326 /* LabelFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56CED7729DF426D0069A326 /* LabelFont.swift */; };
 		B58CB9A829B4EE3D00A11DB3 /* SimpleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CB9A729B4EE3D00A11DB3 /* SimpleTableViewCell.swift */; };
 		B58CB9AE29B52D7C00A11DB3 /* CodedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CB9AD29B52D7C00A11DB3 /* CodedTableViewCell.swift */; };
 		B58CB9B129B603DC00A11DB3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B58CB9B029B603DC00A11DB3 /* SnapKit */; };
@@ -29,6 +31,8 @@
 		B55CC3E129B4DAC50032E75B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B55CC3E429B4DAC50032E75B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B55CC3E629B4DAC50032E75B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B56CED7529DF1D830069A326 /* LabelColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelColor.swift; sourceTree = "<group>"; };
+		B56CED7729DF426D0069A326 /* LabelFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelFont.swift; sourceTree = "<group>"; };
 		B58CB9A729B4EE3D00A11DB3 /* SimpleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewCell.swift; sourceTree = "<group>"; };
 		B58CB9AD29B52D7C00A11DB3 /* CodedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodedTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,6 +68,7 @@
 		B55CC3D729B4DAC40032E75B /* Multiple Custom Cells TableView */ = {
 			isa = PBXGroup;
 			children = (
+				B56CED7429DF1D7A0069A326 /* Resources */,
 				B5A8A35B29D8E545007EA2E7 /* Views */,
 				B5A8A35A29D8E4DE007EA2E7 /* Controllers */,
 				B55CC3D829B4DAC40032E75B /* AppDelegate.swift */,
@@ -74,6 +79,15 @@
 				B55CC3E629B4DAC50032E75B /* Info.plist */,
 			);
 			path = "Multiple Custom Cells TableView";
+			sourceTree = "<group>";
+		};
+		B56CED7429DF1D7A0069A326 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B56CED7529DF1D830069A326 /* LabelColor.swift */,
+				B56CED7729DF426D0069A326 /* LabelFont.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		B5A8A35A29D8E4DE007EA2E7 /* Controllers */ = {
@@ -171,6 +185,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B56CED7629DF1D830069A326 /* LabelColor.swift in Sources */,
+				B56CED7829DF426D0069A326 /* LabelFont.swift in Sources */,
 				B52684CE29D790400055B5C9 /* DetailScreenViewController.swift in Sources */,
 				B55CC3DD29B4DAC40032E75B /* ViewController.swift in Sources */,
 				B58CB9AE29B52D7C00A11DB3 /* CodedTableViewCell.swift in Sources */,

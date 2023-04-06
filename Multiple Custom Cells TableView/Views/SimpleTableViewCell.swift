@@ -12,40 +12,6 @@ class SimpleTableViewCell: UITableViewCell {
     
     static let identifier = "SimpleTableViewCell"
     
-    enum labelColor {
-        case boldColor
-        case lightColor
-        
-        var uiColorCode: UIColor {
-            switch self {
-            case .boldColor:
-                return UIColor(red: 0.078, green: 0.086, blue: 0.098, alpha: 1)
-            case .lightColor:
-                return UIColor(red: 0.408, green: 0.463, blue: 0.518, alpha: 1)
-            }
-        }
-    }
-    
-    enum fontTemp {
-        case sBold
-        case sMedium
-        case sLight
-        case bLight
-        
-        var uiFontCode: UIFont {
-            switch self {
-            case .sBold:
-                return .systemFont(ofSize: 16, weight: .bold)
-            case .sMedium:
-                return .systemFont(ofSize: 16, weight: .medium)
-            case .sLight:
-                return .systemFont(ofSize: 16, weight: .light)
-            case .bLight:
-                return .systemFont(ofSize: 18, weight: .light)
-            }
-        }
-    }
-    
     private let profilePic: UIImageView = {
         let profilePic = UIImageView()
         profilePic.image = UIImage(named: "image2")
@@ -57,8 +23,8 @@ class SimpleTableViewCell: UITableViewCell {
         let nameLabel = UILabel()
         nameLabel.text = "Arda Turan"
         nameLabel.textAlignment = .center
-        nameLabel.textColor = labelColor.boldColor.uiColorCode
-        nameLabel.font = fontTemp.sBold.uiFontCode
+        nameLabel.textColor = LabelColor.boldColor.uiColorCode
+        nameLabel.font = FontTemp.sBold.uiFontCode
         return nameLabel
     }()
     
@@ -66,8 +32,8 @@ class SimpleTableViewCell: UITableViewCell {
         let nickLabel = UILabel()
         nickLabel.text = "@ardaturan77"
         nickLabel.textAlignment = .center
-        nickLabel.textColor = labelColor.lightColor.uiColorCode
-        nickLabel.font = fontTemp.sMedium.uiFontCode
+        nickLabel.textColor = LabelColor.lightColor.uiColorCode
+        nickLabel.font = FontTemp.sMedium.uiFontCode
         return nickLabel
     }()
     
@@ -75,8 +41,8 @@ class SimpleTableViewCell: UITableViewCell {
         let tweetlabel = UILabel()
         tweetlabel.text = "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit"
         tweetlabel.textAlignment = .left
-        tweetlabel.font = fontTemp.bLight.uiFontCode
-        tweetlabel.textColor = labelColor.boldColor.uiColorCode
+        tweetlabel.font = FontTemp.sLight.uiFontCode
+        tweetlabel.textColor = LabelColor.boldColor.uiColorCode
         tweetlabel.numberOfLines = 0
         return tweetlabel
     }()
