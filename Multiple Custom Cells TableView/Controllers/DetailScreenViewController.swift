@@ -12,6 +12,15 @@ import SnapKit
 import UIKit
  class DetailScreenViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+     
+     private func configureAppBar() {
+         let label = UILabel()
+         label.text = "Tweet"
+         label.font = .systemFont(ofSize: 16, weight: .bold)
+         navigationItem.titleView = label
+         
+     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +31,8 @@ import UIKit
         tableView.register(CodedTableViewCell.self, forCellReuseIdentifier: CodedTableViewCell.identifier)
         tableView.register(SimpleTableViewCell.self, forCellReuseIdentifier: SimpleTableViewCell.identifier)
         view.addSubview(tableView)
+        configureAppBar()
+
     }
 
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

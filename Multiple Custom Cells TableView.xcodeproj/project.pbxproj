@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B50D680529E34407005F7473 /* ProfileTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50D680429E34407005F7473 /* ProfileTableViewHeader.swift */; };
+		B50D680729E34445005F7473 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50D680629E34445005F7473 /* ProfileViewController.swift */; };
 		B52684CE29D790400055B5C9 /* DetailScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52684CD29D790400055B5C9 /* DetailScreenViewController.swift */; };
 		B55CC3D929B4DAC40032E75B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55CC3D829B4DAC40032E75B /* AppDelegate.swift */; };
 		B55CC3DB29B4DAC40032E75B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55CC3DA29B4DAC40032E75B /* SceneDelegate.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B50D680429E34407005F7473 /* ProfileTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewHeader.swift; sourceTree = "<group>"; };
+		B50D680629E34445005F7473 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B52684CD29D790400055B5C9 /* DetailScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenViewController.swift; sourceTree = "<group>"; };
 		B55CC3D529B4DAC40032E75B /* Multiple Custom Cells TableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Multiple Custom Cells TableView.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B55CC3D829B4DAC40032E75B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +99,7 @@
 			children = (
 				B52684CD29D790400055B5C9 /* DetailScreenViewController.swift */,
 				B55CC3DC29B4DAC40032E75B /* ViewController.swift */,
+				B50D680629E34445005F7473 /* ProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -104,6 +109,7 @@
 			children = (
 				B58CB9A729B4EE3D00A11DB3 /* SimpleTableViewCell.swift */,
 				B58CB9AD29B52D7C00A11DB3 /* CodedTableViewCell.swift */,
+				B50D680429E34407005F7473 /* ProfileTableViewHeader.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -187,11 +193,13 @@
 			files = (
 				B56CED7629DF1D830069A326 /* LabelColor.swift in Sources */,
 				B56CED7829DF426D0069A326 /* LabelFont.swift in Sources */,
+				B50D680729E34445005F7473 /* ProfileViewController.swift in Sources */,
 				B52684CE29D790400055B5C9 /* DetailScreenViewController.swift in Sources */,
 				B55CC3DD29B4DAC40032E75B /* ViewController.swift in Sources */,
 				B58CB9AE29B52D7C00A11DB3 /* CodedTableViewCell.swift in Sources */,
 				B58CB9A829B4EE3D00A11DB3 /* SimpleTableViewCell.swift in Sources */,
 				B55CC3D929B4DAC40032E75B /* AppDelegate.swift in Sources */,
+				B50D680529E34407005F7473 /* ProfileTableViewHeader.swift in Sources */,
 				B55CC3DB29B4DAC40032E75B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
