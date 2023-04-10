@@ -43,7 +43,7 @@ class CodedTableViewCell: UITableViewCell {
         let tweetLabel = UILabel()
         tweetLabel.text = "14 Mayis'ta secimleri kazanacagiz. Erdogan hukumeti bitecek. Topluma refah gelecek. Herkes 14 Mayis'ta sandiklara gitmeli, oy kullanmali. Bir oy bir oydur."
         tweetLabel.textAlignment = .left
-        tweetLabel.font = FontTemp.bLight.uiFontCode
+        tweetLabel.font = FontTemp.sLight.uiFontCode
         tweetLabel.textColor = LabelColor.boldColor.uiColorCode
         tweetLabel.numberOfLines = 0
         return tweetLabel
@@ -60,7 +60,7 @@ class CodedTableViewCell: UITableViewCell {
         let viewNumberLabel = UILabel()
         viewNumberLabel.text = "24,7K"
         viewNumberLabel.textColor = LabelColor.boldColor.uiColorCode
-        viewNumberLabel.font = FontTemp.sBold.uiFontCode
+        viewNumberLabel.font = FontTemp.ssLight.uiFontCode
         return viewNumberLabel
     }()
     
@@ -92,7 +92,7 @@ class CodedTableViewCell: UITableViewCell {
         let retweetNumber = UILabel()
         retweetNumber.text = "89"
         retweetNumber.textColor = LabelColor.boldColor.uiColorCode
-        retweetNumber.font = FontTemp.sBold.uiFontCode
+        retweetNumber.font = FontTemp.ssLight.uiFontCode
         return retweetNumber
     }()
     
@@ -108,7 +108,7 @@ class CodedTableViewCell: UITableViewCell {
         let quoteNumber = UILabel()
         quoteNumber.text = "1"
         quoteNumber.textColor = LabelColor.boldColor.uiColorCode
-        quoteNumber.font = FontTemp.sBold.uiFontCode
+        quoteNumber.font = FontTemp.ssLight.uiFontCode
         return quoteNumber
     }()
     
@@ -124,7 +124,7 @@ class CodedTableViewCell: UITableViewCell {
         let likeNumber = UILabel()
         likeNumber.text = "933"
         likeNumber.textColor = LabelColor.boldColor.uiColorCode
-        likeNumber.font = FontTemp.sBold.uiFontCode
+        likeNumber.font = FontTemp.ssLight.uiFontCode
         return likeNumber
     }()
     
@@ -172,11 +172,11 @@ class CodedTableViewCell: UITableViewCell {
         return likeIcon
     }()
     
-    private let bookmarkIcon: UIImageView = {
-        let bookmarkIcon = UIImageView()
-        bookmarkIcon.image = UIImage(named: "bookmark")
-        bookmarkIcon.contentMode = .scaleAspectFill
-        return bookmarkIcon
+    private let statisticsIcon: UIImageView = {
+        let statistics = UIImageView()
+        statistics.image = UIImage(systemName: "chart.bar.xaxis")
+        statistics.tintColor = .gray
+        return statistics
     }()
     
     private let shareIcon: UIImageView = {
@@ -217,7 +217,7 @@ class CodedTableViewCell: UITableViewCell {
         contentView.addSubview(commentIcon)
         contentView.addSubview(retweetIcon)
         contentView.addSubview(likeIcon)
-        contentView.addSubview(bookmarkIcon)
+        contentView.addSubview(statisticsIcon)
         contentView.addSubview(shareIcon)
         
         
@@ -227,118 +227,120 @@ class CodedTableViewCell: UITableViewCell {
         
         profilePic.snp.makeConstraints { make in
             make.height.width.equalTo(55)
-            //make.centerY.equalToSuperview()
-            make.top.equalToSuperview().offset(42)
+            make.top.equalToSuperview().offset(20)
             make.leading.equalToSuperview().offset(20)
         }
         
         nameLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(49)
+            make.top.equalToSuperview().offset(27)
             make.leading.equalToSuperview().offset(83)
         }
         
         nickLabel.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(83)
-            make.top.equalToSuperview().offset(68)
+            make.leading.equalTo(nameLabel.snp.trailing).offset(6)
+            make.top.equalToSuperview().offset(27)
         }
         
         tweetLabel.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(20)
+            make.leading.equalToSuperview().offset(83)
             make.trailing.equalToSuperview().offset(-20)
-            make.top.equalToSuperview().offset(120)
+            make.top.equalToSuperview().offset(52)
         }
         
-        dateLabel.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(20)
-            make.top.equalTo(tweetLabel.snp.bottom).offset(37)
-            make.bottom.equalToSuperview().offset(-103)
-        }
-        
+//        dateLabel.snp.makeConstraints { make in
+//            make.leading.equalToSuperview().offset(20)
+//            make.top.equalTo(tweetLabel.snp.bottom).offset(37)
+//            make.bottom.equalToSuperview().offset(-103)
+//        }
+//
         viewNumberLabel.snp.makeConstraints { make in
-            make.top.equalTo(tweetLabel.snp.bottom).offset(37)
-            make.leading.equalTo(dateLabel.snp.trailing).offset(5)
+            make.centerY.equalTo(statisticsIcon.snp.centerY)
+            make.leading.equalTo(statisticsIcon.snp.trailing).offset(4)
         }
-        
-        viewLabel.snp.makeConstraints { make in
-            make.top.equalTo(tweetLabel.snp.bottom).offset(37)
-            make.leading.equalTo(viewNumberLabel.snp.trailing).offset(4)
-        }
-        
-        
-        separatorLine.snp.makeConstraints { make in
-            make.height.equalTo(0)
-            make.leading.equalToSuperview().offset(14)
-            make.trailing.equalToSuperview().offset(-14)
-            make.top.equalTo(dateLabel.snp.bottom).offset(15)
-        }
-        
+//
+//        viewLabel.snp.makeConstraints { make in
+//            make.top.equalTo(tweetLabel.snp.bottom).offset(37)
+//            make.leading.equalTo(viewNumberLabel.snp.trailing).offset(4)
+//        }
+//
+//
+//        separatorLine.snp.makeConstraints { make in
+//            make.height.equalTo(0)
+//            make.leading.equalToSuperview().offset(14)
+//            make.trailing.equalToSuperview().offset(-14)
+//            make.top.equalTo(dateLabel.snp.bottom).offset(15)
+//        }
+//
         retweetNumber.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(20)
-            make.top.equalTo(dateLabel.snp.bottom).offset(28)
+            make.leading.equalTo(retweetIcon.snp.trailing).offset(4)
+            make.centerY.equalTo(retweetIcon.snp.centerY)
         }
-        
-        retweetText.snp.makeConstraints { make in
-            make.leading.equalTo(retweetNumber.snp.trailing).offset(4)
-            make.top.equalTo(dateLabel.snp.bottom).offset(28)
-        }
-        
+//
+//        retweetText.snp.makeConstraints { make in
+//            make.leading.equalTo(retweetNumber.snp.trailing).offset(4)
+//            make.top.equalTo(dateLabel.snp.bottom).offset(28)
+//        }
+//
         quoteNumber.snp.makeConstraints { make in
-            make.leading.equalTo(retweetText.snp.trailing).offset(8)
-            make.top.equalTo(dateLabel.snp.bottom).offset(28)
+            make.leading.equalTo(commentIcon.snp.trailing).offset(4)
+            make.centerY.equalTo(commentIcon.snp.centerY)
         }
-        
-        quoteText.snp.makeConstraints { make in
-            make.leading.equalTo(quoteNumber.snp.trailing).offset(4)
-            make.top.equalTo(dateLabel.snp.bottom).offset(28)
-        }
-        
+//
+//        quoteText.snp.makeConstraints { make in
+//            make.leading.equalTo(quoteNumber.snp.trailing).offset(4)
+//            make.top.equalTo(dateLabel.snp.bottom).offset(28)
+//        }
+//
         likeNumber.snp.makeConstraints { make in
-            make.leading.equalTo(quoteText.snp.trailing).offset(8)
-            make.top.equalTo(dateLabel.snp.bottom).offset(28)
+            make.leading.equalTo(likeIcon.snp.trailing).offset(4)
+            make.centerY.equalTo(likeIcon.snp.centerY)
         }
+//
+//        likeText.snp.makeConstraints { make in
+//            make.leading.equalTo(likeNumber.snp.trailing).offset(4)
+//            make.top.equalTo(dateLabel.snp.bottom).offset(28)
+//        }
         
-        likeText.snp.makeConstraints { make in
-            make.leading.equalTo(likeNumber.snp.trailing).offset(4)
-            make.top.equalTo(dateLabel.snp.bottom).offset(28)
-        }
-        
-        separatorLinee.snp.makeConstraints { make in
-            make.height.equalTo(0)
-            make.leading.equalToSuperview().offset(14)
-            make.trailing.equalToSuperview().offset(-14)
-            make.top.equalTo(likeText.snp.bottom).offset(12)
-        }
+//        separatorLinee.snp.makeConstraints { make in
+//            make.height.equalTo(0)
+//            make.leading.equalToSuperview().offset(14)
+//            make.trailing.equalToSuperview().offset(-14)
+//            make.top.equalTo(tweetLabel.snp.bottom).offset(12)
+//        }
         
         commentIcon.snp.makeConstraints { make in
-            make.height.width.equalTo(18)
-            make.leading.equalToSuperview().offset(45)
-            make.top.equalTo(separatorLinee.snp.bottom).offset(13)
+            make.height.width.equalTo(16)
+            make.leading.equalToSuperview().offset(84)
+            make.top.equalTo(tweetLabel.snp.bottom).offset(12)
         }
         
         retweetIcon.snp.makeConstraints { make in
-            make.height.equalTo(15)
-            make.width.equalTo(22)
-            make.leading.equalTo(commentIcon.snp.trailing).offset(54)
-            make.top.equalTo(separatorLinee.snp.bottom).offset(13)
+            make.height.equalTo(14)
+            make.width.equalTo(18)
+            make.leading.equalTo(commentIcon.snp.trailing).offset(45)
+            make.top.equalTo(tweetLabel.snp.bottom).offset(13)
         }
         
         likeIcon.snp.makeConstraints { make in
-            make.height.width.equalTo(18)
-            make.leading.equalTo(retweetIcon.snp.trailing).offset(54)
-            make.top.equalTo(separatorLinee.snp.bottom).offset(13)
+            make.height.width.equalTo(17)
+            make.leading.equalTo(retweetIcon.snp.trailing).offset(45)
+            make.top.equalTo(tweetLabel.snp.bottom).offset(12)
         }
         
-        bookmarkIcon.snp.makeConstraints { make in
-            make.height.width.equalTo(18)
-            make.leading.equalTo(likeIcon.snp.trailing).offset(54)
-            make.top.equalTo(separatorLinee.snp.bottom).offset(13)
+        statisticsIcon.snp.makeConstraints { make in
+            make.height.width.equalTo(20)
+            make.leading.equalTo(likeIcon.snp.trailing).offset(45)
+            make.top.equalTo(tweetLabel.snp.bottom).offset(11)
         }
         
         shareIcon.snp.makeConstraints { make in
-            make.height.width.equalTo(18)
-            make.leading.equalTo(bookmarkIcon.snp.trailing).offset(54)
-            make.top.equalTo(separatorLinee.snp.bottom).offset(13)
+            make.height.width.equalTo(16)
+            make.leading.equalTo(statisticsIcon.snp.trailing).offset(45)
+            make.top.equalTo(tweetLabel.snp.bottom).offset(13)
+            make.bottom.equalTo(contentView.snp.bottom).offset(-10)
         }
+        
+        
     }
     
     

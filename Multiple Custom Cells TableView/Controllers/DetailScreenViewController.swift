@@ -8,8 +8,6 @@
 import UIKit
 import SnapKit
 
-// DetailScreenViewController
-import UIKit
  class DetailScreenViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
      
@@ -32,6 +30,8 @@ import UIKit
         tableView.register(SimpleTableViewCell.self, forCellReuseIdentifier: SimpleTableViewCell.identifier)
         view.addSubview(tableView)
         configureAppBar()
+        
+        
 
     }
 

@@ -9,31 +9,7 @@ import UIKit
 
 class ProfileTableViewHeader: UIView {
     
-    private enum SectionTabs: String {
-        case tweets = "Tweets"
-        case tweetsAndReplies = "Tweets & Replies"
-        case media = "Media"
-        case likes = "Likes"
-        
-        var index: Int {
-            switch self {
-            case .tweets:
-                return 0
-            case .tweetsAndReplies:
-                return 1
-            case .media:
-                return 2
-            case .likes:
-                return 3
-            }
-        }
-    }
     
-    private var selectedTab: Int = 0 {
-        didSet {
-            print(selectedTab)
-        }
-    }
     
     private var tabs: [UIButton] = ["Tweets", "Tweets & Replies", "Media", "Likes"]
         .map { buttonTitle in
@@ -119,7 +95,7 @@ class ProfileTableViewHeader: UIView {
     private let usernameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "yusufkaranx"
+        label.text = "@yusufkaranx"
         label.textColor = .secondaryLabel
         label.font = .systemFont(ofSize: 18, weight: .regular)
         return label
@@ -170,32 +146,12 @@ class ProfileTableViewHeader: UIView {
         addSubview(followersCountLabel)
         addSubview(sectionStack)
         configureConstraints()
-        configureStackButton()
         
     }
     
-    private func configureStackButton() {
-        for (_, button) in sectionStack.arrangedSubviews.enumerated(){
-            guard let button = button as? UIButton else { return }
-            button.addTarget(self, action: #selector(didTapTap(_:)), for: .touchUpInside)
-        }
-    }
     
-    @objc private func didTapTap(_ sender: UIButton){
-        guard let label = sender.titleLabel?.text else { return }
-        switch label {
-        case SectionTabs.tweets.rawValue:
-            selectedTab = 0
-        case SectionTabs.tweetsAndReplies.rawValue:
-            selectedTab = 1
-        case SectionTabs.media.rawValue:
-            selectedTab = 2
-        case SectionTabs.likes.rawValue:
-            selectedTab = 3
-        default:
-            selectedTab = 0
-        }
-    }
+    
+    
     
     required init?(coder: NSCoder) {
         fatalError()
@@ -219,12 +175,12 @@ class ProfileTableViewHeader: UIView {
         
         let displayNameLabelConstraints = [
             displayNameLabel.leadingAnchor.constraint(equalTo: profileAvatarImageView.leadingAnchor),
-            displayNameLabel.topAnchor.constraint(equalTo: profileAvatarImageView.bottomAnchor, constant: 20)
+            displayNameLabel.topAnchor.constraint(equalTo: profileAvatarImageView.bottomAnchor, constant: 10)
         ]
         
         let usernameLabelConstraints = [
             usernameLabel.leadingAnchor.constraint(equalTo: displayNameLabel.leadingAnchor),
-            usernameLabel.topAnchor.constraint(equalTo: displayNameLabel.bottomAnchor, constant: 5)
+            usernameLabel.topAnchor.constraint(equalTo: displayNameLabel.bottomAnchor, constant: 1)
         ]
         
         let userBioLabelConstraints = [

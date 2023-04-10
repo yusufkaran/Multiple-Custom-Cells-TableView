@@ -21,6 +21,7 @@
 		B58CB9A829B4EE3D00A11DB3 /* SimpleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CB9A729B4EE3D00A11DB3 /* SimpleTableViewCell.swift */; };
 		B58CB9AE29B52D7C00A11DB3 /* CodedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CB9AD29B52D7C00A11DB3 /* CodedTableViewCell.swift */; };
 		B58CB9B129B603DC00A11DB3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B58CB9B029B603DC00A11DB3 /* SnapKit */; };
+		B5D3899229E47898003C537D /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D3899129E47898003C537D /* ProfileHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		B56CED7729DF426D0069A326 /* LabelFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelFont.swift; sourceTree = "<group>"; };
 		B58CB9A729B4EE3D00A11DB3 /* SimpleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewCell.swift; sourceTree = "<group>"; };
 		B58CB9AD29B52D7C00A11DB3 /* CodedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodedTableViewCell.swift; sourceTree = "<group>"; };
+		B5D3899129E47898003C537D /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,11 +109,20 @@
 		B5A8A35B29D8E545007EA2E7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B5D3898F29E476EC003C537D /* ProfileScreen */,
 				B58CB9A729B4EE3D00A11DB3 /* SimpleTableViewCell.swift */,
 				B58CB9AD29B52D7C00A11DB3 /* CodedTableViewCell.swift */,
-				B50D680429E34407005F7473 /* ProfileTableViewHeader.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		B5D3898F29E476EC003C537D /* ProfileScreen */ = {
+			isa = PBXGroup;
+			children = (
+				B50D680429E34407005F7473 /* ProfileTableViewHeader.swift */,
+				B5D3899129E47898003C537D /* ProfileHeaderView.swift */,
+			);
+			path = ProfileScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +204,7 @@
 			files = (
 				B56CED7629DF1D830069A326 /* LabelColor.swift in Sources */,
 				B56CED7829DF426D0069A326 /* LabelFont.swift in Sources */,
+				B5D3899229E47898003C537D /* ProfileHeaderView.swift in Sources */,
 				B50D680729E34445005F7473 /* ProfileViewController.swift in Sources */,
 				B52684CE29D790400055B5C9 /* DetailScreenViewController.swift in Sources */,
 				B55CC3DD29B4DAC40032E75B /* ViewController.swift in Sources */,
