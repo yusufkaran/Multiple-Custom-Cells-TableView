@@ -41,7 +41,7 @@ class CodedTableViewCell: UITableViewCell {
     
     private let tweetLabel: UILabel = {
         let tweetLabel = UILabel()
-        tweetLabel.text = "14 Mayis'ta secimleri kazanacagiz. Erdogan hukumeti bitecek. Topluma refah gelecek. Herkes 14 Mayis'ta sandiklara gitmeli, oy kullanmali. Bir oy bir oydur."
+        tweetLabel.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse ."
         tweetLabel.textAlignment = .left
         tweetLabel.font = FontTemp.sLight.uiFontCode
         tweetLabel.textColor = LabelColor.boldColor.uiColorCode
